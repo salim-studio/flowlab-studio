@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,41 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Node category colors
+        node: {
+          input: "hsl(var(--node-input))",
+          "input-bg": "hsl(var(--node-input-bg))",
+          processing: "hsl(var(--node-processing))",
+          "processing-bg": "hsl(var(--node-processing-bg))",
+          analysis: "hsl(var(--node-analysis))",
+          "analysis-bg": "hsl(var(--node-analysis-bg))",
+          modeling: "hsl(var(--node-modeling))",
+          "modeling-bg": "hsl(var(--node-modeling-bg))",
+          timeseries: "hsl(var(--node-timeseries))",
+          "timeseries-bg": "hsl(var(--node-timeseries-bg))",
+          output: "hsl(var(--node-output))",
+          "output-bg": "hsl(var(--node-output-bg))",
+        },
+        // Status colors
+        status: {
+          success: "hsl(var(--status-success))",
+          warning: "hsl(var(--status-warning))",
+          error: "hsl(var(--status-error))",
+          pending: "hsl(var(--status-pending))",
+          running: "hsl(var(--status-running))",
+        },
+        // Canvas
+        canvas: {
+          bg: "hsl(var(--canvas-bg))",
+          grid: "hsl(var(--canvas-grid))",
+          dot: "hsl(var(--canvas-dot))",
+        },
+        // Edges
+        edge: {
+          DEFAULT: "hsl(var(--edge-default))",
+          selected: "hsl(var(--edge-selected))",
+          animated: "hsl(var(--edge-animated))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +104,42 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "slide-in-left": {
+          from: { transform: "translateX(-100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-in-right": {
+          from: { transform: "translateX(100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
+        "slide-in-left": "slide-in-left 0.3s ease-out",
+        "slide-in-right": "slide-in-right 0.3s ease-out",
+        "pulse-soft": "pulse-soft 2s infinite",
+      },
+      boxShadow: {
+        'node': '0 4px 12px rgba(0, 0, 0, 0.3)',
+        'node-hover': '0 8px 24px rgba(0, 0, 0, 0.4)',
+        'panel': '0 4px 20px rgba(0, 0, 0, 0.4)',
       },
     },
   },
