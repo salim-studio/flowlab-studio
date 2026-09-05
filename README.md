@@ -1,5 +1,4 @@
-# Welcome to your flowlab-studio
- project
+# Welcome to your flowlab-studio project
 
 
 
